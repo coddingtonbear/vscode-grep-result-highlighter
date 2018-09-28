@@ -1,0 +1,61 @@
+{
+    "name": "GrepResultHighlighter",
+    "displayName": "Grep Result Highlighter",
+    "description": "Highlights grep results to make it easier for you to identify files and matches in results.",
+    "categories": [
+        "Other"
+    ],
+    "license": "MIT",
+    "version": "0.9.0",
+    "bugs": {
+        "url": "https://github.com/coddingtonbear/vscode-grep-result-highlighter/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/coddingtonbear/vscode-grep-result-highlighter.git"
+    },
+    "engines": {
+        "vscode": "^1.15.0"
+    },
+    "publisher": "coddingtonbear",
+    "main": "./out/src/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "grep-result",
+                "aliases": [
+                    "Grep Result",
+                    "grep"
+                ],
+                "extensions": [
+                    ".grep.txt"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "grep-result",
+                "scopeName": "text.grep-result",
+                "path": "./syntaxes/grep-result.tmLanguage.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:grep-result"
+    ],
+    "devDependencies": {
+        "@types/node": "^9.4.0",
+        "tslint": "^5.9.1",
+        "typescript": "^2.6.2",
+        "vscode": "^1.1.14"
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "integrationtest": "node ./node_modules/vscode/bin/test",
+        "tslint": "tslint --project ./",
+        "unittest": "node out/test/testRunner.js -c jasmine.unittest.json"
+    }
+}

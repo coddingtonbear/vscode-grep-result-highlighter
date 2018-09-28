@@ -1,0 +1,13 @@
+{
+    "name": "grep-result",
+    "scopeName": "text.grep-result",
+    "patterns": [
+        {
+            "match": "^(.*\\:)(.*)$",
+            "captures": {
+                "1": {"name": "variable.other.grep-result"},
+                "2": {"name": "string.other.grep-result"}
+            }
+        }
+    ]
+}
